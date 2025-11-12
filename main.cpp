@@ -9,6 +9,13 @@ uint64_t fib_recursive(uint64_t n);
 using FibFunc = std::function<uint64_t(uint64_t)>;
 
 FibFunc get_strategy(const std::string& name) {
+    static const std::unordered_map<std::string, FibFunc> strategies = {
+        {"recursive", fib_recursive},
+    };
+    auto it = strategies.find(name);
+    if (it != strategies.end()) {
+        return it->second;
+    }
     throw std::invalid_argument("Unknown strategy: " + name);
 }
 
