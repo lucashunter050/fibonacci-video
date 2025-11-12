@@ -1,7 +1,7 @@
 CXX = clang++
 CXXFLAGS = -std=c++20 -O3 -march=native -Wall -Wextra
 
-SRC = main.cpp fib_recursive.cpp
+SRC = main.cpp fib_recursive.cpp fib_memoized.cpp
 OBJ = $(SRC:.cpp=.o)
 
 fib_bench: $(OBJ)
