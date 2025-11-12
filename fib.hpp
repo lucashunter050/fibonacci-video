@@ -1,5 +1,8 @@
 #pragma once
 #include <cstdint>
+#include <boost/multiprecision/cpp_int.hpp>
 
-uint64_t fib_recursive(uint64_t n);
-uint64_t fib_memoized(uint64_t n);
+using big_int = boost::multiprecision::cpp_int;
+
+big_int fib_recursive(uint64_t n);
+big_int fib_memoized(uint64_t n);

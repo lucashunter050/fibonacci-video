@@ -1,6 +1,6 @@
 #include "fib.hpp"
 
-uint64_t fib_recursive(uint64_t n) {
+big_int fib_recursive(uint64_t n) {
     if (n <= 1) {
         return n;
     }
