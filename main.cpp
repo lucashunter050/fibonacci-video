@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include "fib.hpp"
 
-using FibFunc = std::function<uint64_t(uint64_t)>;
+using FibFunc = std::function<big_int(uint64_t)>;
 
 FibFunc get_strategy(const std::string &name)
 {
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
         FibFunc fib = get_strategy(strategy);
 
         auto start = std::chrono::high_resolution_clock::now();
-        uint64_t result = fib(n);
+        big_int result = fib(n);
         auto end = std::chrono::high_resolution_clock::now();
 
         double elapsed_ms = std::chrono::duration<double, std::milli>(end - start).count();
